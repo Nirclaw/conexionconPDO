@@ -1,0 +1,20 @@
+{
+    "name": "apolt01-023/pruebas",
+    "autoload": {
+        "psr-4": {
+            "App\\": [
+                "./scripts",
+                "./scripts/db"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Nirclaw",
+            "email": "caicedonicolas150@gmail.com"
+        }
+    ],
+    "require": {
+        "bramus/router": "~1.6"
+    }
+}
