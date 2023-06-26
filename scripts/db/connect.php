@@ -2,17 +2,15 @@
 
 namespace App;
 
-class connect extends credential
+class connect 
 {
-    protected $con;
+    public $con;
     function __construct(
-        private $dsn = "mysql",
-        private $port = 3306
+       
     ) {
-        parent::__construct();
 
         try {
-            $this->con = new \PDO($this->dsn . ":host=" . $this->__get('host') . ";dbname=" . $this->__get('dbname') . ";user=" . $this->username . ";password=" . $this->__get('password') . ";port=" . $this->port);
+            $this->con = new \PDO($_ENV['DSN']. ":host=" . $_ENV['HOST']. ";dbname=" . $_ENV['DBNAME'] . ";user=" . $_ENV['USERNAME'] . ";password=" . $_ENV['PASSWORD'] . ";port=" . $_ENV['PORT']);
             $this->con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
         } catch (\PDOException $e) {
